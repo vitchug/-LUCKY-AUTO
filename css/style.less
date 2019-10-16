@@ -11,12 +11,12 @@ body {
     height: 1600px;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: max(400px) max(50px) max(10px) 1fr 1fr 1fr;
+    grid-template-rows: max(400px) max(50px) max(10px) 1fr 1fr max(10px) 1fr;
     border: 1px solid black;
 }
 
 header {
-    background-image: url(/img/bg_header_1500x500.jpg);
+    background-image: url(../img/bg_header_1500x500.jpg);
     grid-row: 1;
     display: grid;
     max-width: 1210px;
@@ -45,7 +45,7 @@ ul {
     justify-content: center;
 }
 
-ul li {
+.nav_menu {
     list-style: none;
     width: 120px;
    // height: 15px;
@@ -70,13 +70,13 @@ a:hover {
     color: #3939aa;
 }
 
-li:hover {
+.nav_menu:hover {
     background-color: #b0b0e8;
      box-shadow: 5px 6px 26px 0 rgba(0,0,0,.2);
      border-radius: 10%;
 }
-
-.strip {
+//полоса_______________________________________________________
+.top {
     grid-row: 3;
     background-color: white;
 }
@@ -90,12 +90,12 @@ h2{
     opacity: 0.6;
     text-shadow: -1px 0 1px white, 0 -1px 1px white, 0 1px 1px white, 1px 0 1px white, 0 0 8px white, 0 0 8px white, 0 0 8px white, 2px 2px 3px black;
 }
-
+//main______________________________________________________________
 main {
     grid-row: 4/7;
     margin: 0 30px 0 30px;
 }
-
+//section.one_s_____________________________________________________
 section.one_s {
     grid-row: 4;
     display: flex;
@@ -119,6 +119,7 @@ div.two {
 .textP p {
   font-family: 'Roboto Slab', serif;
     font-size: 16px;
+    color: grey;
 }
 
 .textP:hover {
@@ -128,14 +129,15 @@ div.two {
 
 section.two_s {
     grid-row: 5;
-    display: flex;
+    display: grid;
+    grid-auto-columns: auto auto;
 }
 
 h3 {
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 1.6em;
     opacity: 0.6;
     /*letter-spacing: .1em;
     text-shadow: 4px 4px white, 6px 6px #D7CC88;
@@ -146,6 +148,47 @@ h3 {
 }
 
 .block {
-    width: 50%;
+  font-family: 'Roboto Slab', serif;
+    font-size: 16px;
 }
+
+.block_1 {
+    grid-column: 1;
+    width: auto;
+    display: inline-block;
+     height: auto;
+    color: grey;
+}
+
+li.servise {
+    list-style: square;
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    text-align: none;
+    padding: none;
+    border-radius: none;
+    outline: none;
+}
+
+
+.block_2 {
+    grid-column: 2;
+    width: auto;
+    display: inline-block;
+    height: auto;
+    color: grey;
+}
+
+.bottom {
+    grid-row: 5;
+    height: 10px;
+    background-color: white;
+}
+
+
+
+
+
+
 
