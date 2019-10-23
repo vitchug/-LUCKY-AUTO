@@ -1,5 +1,16 @@
 //compress: true
 
+@import "blocks/fonts";
+
+@robotoSl_bold: robotoSlab-bold,
+sans-serif;
+
+@robotoSl_light: robotoSlab-light,
+sans-serif;
+
+@robotoSl_regul: robotoSlab-regular,
+sans-serif;
+
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +20,7 @@ body {
 .container_grid {
     background-color: #e6e3e3;
     min-width: 1210px;
-    height: auto;
+    max-height: 1500px;
     margin: 0 auto;
     display: grid;
     grid-template-rows: max(400px) max(50px) max(190px) 1fr 1fr 1fr max(200px);
@@ -25,7 +36,7 @@ header {
 }
 
 h1 {
-    font-family: 'Roboto Slab', serif;
+    font-family: @robotoSl_bold;
     text-transform: uppercase;
     display: inline-block;
     font-size: 2.5em;
@@ -46,6 +57,7 @@ ul {
 }
 
 .nav_menu {
+    display: block;
     list-style: none;
     width: 120px;
    // height: 15px;
@@ -53,7 +65,8 @@ ul {
     margin-right: 20px;
     text-align: center;
     padding: 0.5%;
-     border-radius: 10%;
+    border: 1px solid grey;
+     border-radius: 11%;
     outline: none;
 
 }
@@ -86,7 +99,7 @@ a:hover {
 }
 
 h2 {
-   font-family: 'Roboto Slab', serif;
+   font-family: @robotoSl_regul;
     background-color: white;
     text-transform: uppercase;
     display: inline-block;
@@ -124,15 +137,10 @@ div.two {
 }
 
 .textP p {
-  font-family: 'Roboto Slab', serif;
+  font-family: @robotoSl_light;;
     font-size: 18px;
     color: grey;
 }
-
-/*.textP:hover {
-    background-color: #f1e8e8;
-    border-radius: 5%;
-}*/
 
 section.two_s {
     grid-row: 5;
@@ -141,7 +149,7 @@ section.two_s {
 }
 
 h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: @robotoSl_light;
     text-transform: uppercase;
     display: inline-block;
     font-size: 1.6em;
@@ -151,7 +159,7 @@ h3 {
 }
 
 .block {
-  font-family: 'Roboto Slab', serif;
+  font-family: @robotoSl_light;
     font-size: 18px;
 }
 
@@ -200,6 +208,7 @@ li.servise {
 }
 
 section h2 {
+    font-family: @robotoSl_regul;
     grid-row: 1;
     grid-column: 1/ span 2;
     text-align: center;
@@ -209,8 +218,8 @@ section h2 {
     grid-row: 2;
     grid-column: 1;
     display: block;
-    width: 616px;
-    height: 341px;
+    max-width: 616px;
+    min-height: 341px;
     background-image: url(../img/map1.jpg);
 }
 
@@ -218,7 +227,7 @@ section h2 {
     grid-row: 2;
     grid-column: 2;
     display: block;
-    font-family: 'Roboto Slab', serif;
+    font-family: @robotoSl_light;
     font-size: 18px;
     list-style: none;
     line-height: 170%;
@@ -232,14 +241,16 @@ section h2 {
 //footer___________________________________________________
 
 footer {
-    background-color: #a6b7b7;
-    margin-top: 50px;
+    background-color: #c8d1d1;
+    margin-top: 30px;
+    max-height: 80px;
     grid-row: 7;
     display: flex;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
+    font-family: @robotoSl_light;
+    font-size: 16px;
     color: white;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -250,44 +261,16 @@ footer p {
 
 
 //______________________________________________________________________________________________________________
+@import "blocks/media";
 
-/*@media (min-width: 768px) {
-    .container_grid {
-        max-height: 1890px;
-    }
 
-    .textP p {
-  font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    color: grey;
-}
-    .block {
-    font-family: 'Roboto Slab',serif;
-    font-size: 20px;
-}
-
-    .adress {
-        font-family: 'Roboto Slab',serif;
-    font-size: 20px;
-    }
-
-    .container_grid {
-    max-height: 1970px;
-}
-
-    footer {
-       font-family: 'Roboto Slab',serif;
-    font-size: 20px;
-    }
-}*/
-
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+/*@media only screen and (min-width: 320px) and (max-width: 480px) {
 
    .container_grid {
       min-width: 320px;
        max-width: 480px;
-       height: auto;
-       grid-template-rows: 170px 50px 1fr 1fr 1fr 1fr 1fr;
+       max-height: 1000px;
+       grid-template-rows: 170px 50px 1fr 1fr 1fr 1fr 1fr 1fr;
        grid-template-columns: 100%;
        justify-content: center;
        grid-row-gap: 10px;
@@ -299,7 +282,8 @@ footer p {
         display: block;
         max-width: 480px;
          min-width: 320px;
-         background-size: contain;
+        background-image: url(../img/service_2.png);
+         background-size: cover;
          background-repeat: no-repeat;
         height: 170px;
     }
@@ -326,7 +310,7 @@ footer p {
 }
 
     main {
-    grid-row: 2/7;
+    grid-row: 2/8;
     display: block;
     max-width: 480px;
     padding: 0 5px 0 5px;
@@ -374,11 +358,63 @@ footer p {
      grid-row: 5;
      display: block;
     font-size: 1.2em;
+    margin: 10px 0 20px 0;
     text-align: center;
      background-color: rgba(255, 255, 255, 0.1);
     color: black;
     }
 
+    section.two_s {
+        grid-row: 6;
+        display: block;
+    }
+
+    .bottom {
+    grid-row: 7;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-size: contain;
+    opacity: .5;
+    margin: 0;
+    }
+
+    section.contact {
+       grid-row: 8;
+       display: block;
+       text-align: center;
+       width: 100%;
+    }
+
+    h2.cont {
+      display: block;
+    font-size: 1.5em;
+    text-align: center;
+     background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+    }
+
+    .map {
+        max-width: 480px;
+    }
+
+    ul.block {
+        margin: -10px 0 10px 0;
+        font-size: 14px;
+    }
+
+    ul.adress {
+        font-size: 14px;
+    }
+
+    footer {
+       grid-row: 9;
+        display: block;
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+    }
+
 }
 
-
+*/
