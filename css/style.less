@@ -3,15 +3,16 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #e6e3e3;
 }
 
 .container_grid {
     background-color: #e6e3e3;
     min-width: 1210px;
-    max-height: 1830px;
+    height: auto;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: max(400px) max(50px) max(10px) 1fr 1fr 1fr max(100px);
+    grid-template-rows: max(400px) max(50px) max(190px) 1fr 1fr 1fr max(200px);
 }
 
 header {
@@ -67,6 +68,7 @@ a {
 
 a:hover {
     color: #3939aa;
+    transition: all 2s;
 }
 
 .nav_menu:hover {
@@ -77,14 +79,18 @@ a:hover {
 //полоса_______________________________________________________
 .top {
     grid-row: 3;
-    background-color: white;
-    height: 5px;
+    background-image: url(../img/bg_strip_top.png);
+    width: 100%;
+    height: 200px;
+    margin-top: 1%;
 }
 
 h2 {
    font-family: 'Roboto Slab', serif;
+    background-color: white;
     text-transform: uppercase;
     display: inline-block;
+    margin: 2% 1% 1% 1%;
     font-size: 2.3em;
     max-height: 100px;
     opacity: 0.6;
@@ -99,6 +105,7 @@ main {
 section.one_s {
     grid-row: 4;
     display: flex;
+
 }
 
 .textP {
@@ -107,12 +114,12 @@ section.one_s {
 }
 
 div.one {
-   grid-column: 1;
+  // grid-column: 1;
     width: 50%;
 }
 
 div.two {
-   grid-column: 2;
+ //  grid-column: 2;
     width: 50%;
 }
 
@@ -122,10 +129,10 @@ div.two {
     color: grey;
 }
 
-.textP:hover {
+/*.textP:hover {
     background-color: #f1e8e8;
     border-radius: 5%;
-}
+}*/
 
 section.two_s {
     grid-row: 5;
@@ -139,10 +146,6 @@ h3 {
     display: inline-block;
     font-size: 1.6em;
     opacity: 0.6;
-    /*letter-spacing: .1em;
-    text-shadow: 4px 4px white, 6px 6px #D7CC88;
-
-     text-shadow: 1px 1px #732372, 1px -1px #732372, -1px 1px #732372, -1px -1px #732372, 3px 3px 6px rgba(0,0,0,.5);*/
 
     text-shadow: 1px 1px #732372, 1px -1px #e6e3e3, -1px 1px #d3d1d1, -1px -1px #5b5a5a, 3px 3px 6px rgba(0,0,0,0.5);
 }
@@ -182,8 +185,8 @@ li.servise {
 
 .bottom {
     grid-row: 5;
-    height: 5px;
-    background-color: white;
+    height: 200px;
+    background-image: url(../img/auto_parts.png);
 }
 
 //contact__________________________________________
@@ -248,7 +251,7 @@ footer p {
 
 //______________________________________________________________________________________________________________
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .container_grid {
         max-height: 1890px;
     }
@@ -276,10 +279,105 @@ footer p {
        font-family: 'Roboto Slab',serif;
     font-size: 20px;
     }
+}*/
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+   .container_grid {
+      min-width: 320px;
+       max-width: 480px;
+       height: auto;
+       grid-template-rows: 170px 50px 1fr 1fr 1fr 1fr 1fr;
+       grid-template-columns: 100%;
+       justify-content: center;
+       grid-row-gap: 10px;
+
+    }
+
+    header {
+        grid-row: 1;
+        display: block;
+        max-width: 480px;
+         min-width: 320px;
+         background-size: contain;
+         background-repeat: no-repeat;
+        height: 170px;
+    }
+
+    h1 {
+        display: block;
+        font-size: 1.8em;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .top {
+    grid-row: 2;
+    display: block;
+    width: 100%;
+    height: 50px;
+     background-size: contain;
+    opacity: 0.5;
+    margin: 0;
 }
 
-// Малые девайсы («ландшафтные телефоны», >= 576px)
-@media (min-width: 576px) {
+    main {
+    grid-row: 2/7;
+    display: block;
+    max-width: 480px;
+    padding: 0 5px 0 5px;
+    margin: 0;
+}
+
+     h2#one_top {
+      grid-row: 2;
+    display: block;
+    font-size: 1.5em;
+     margin-top: -50px;
+    text-align: center;
+     background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+    }
+
+    section.one_s {
+    grid-row: 3;
+    display: block;
+    max-width: 480px;
+    text-align: left;
+
+}
+
+    div.one, div.two {
+        width: 100%;
+         display: block;
+    }
+
+     .one_s p {
+        margin: 10px 0 10px 0;
+         font-size: 14px;
+    }
+
+    h2#two_center {
+    grid-row: 4;
+     display: block;
+    font-size: 1.5em;
+    text-align: center;
+     background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+    }
+
+    h3 {
+     grid-row: 5;
+     display: block;
+    font-size: 1.2em;
+    text-align: center;
+     background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+    }
 
 }
 
